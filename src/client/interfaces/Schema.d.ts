@@ -17,4 +17,7 @@ export interface Schema {
     uniqueItems?: boolean;
     maxProperties?: number;
     minProperties?: number;
+    title?: string;
+    description?: string;
+    default?: any;
 }

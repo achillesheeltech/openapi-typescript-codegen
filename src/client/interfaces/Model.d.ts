@@ -10,6 +10,7 @@ export interface Model extends Schema {
     link: Model | null;
     description: string | null;
     default?: string;
+    hasDefault?: boolean;
     imports: string[];
     enum: Enum[];
     enums: Model[];
