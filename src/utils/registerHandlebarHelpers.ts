@@ -51,4 +51,8 @@ export function registerHandlebarHelpers(root: { httpClient: HttpClient; useOpti
                 .join(' | ')
         );
     });
+
+    Handlebars.registerHelper('json', function (this: any, obj: any) {
+        return JSON.stringify(obj)
+    })
 }
