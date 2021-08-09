@@ -1,0 +1,7 @@
+build:
+  script: nix-shell -I nixpkgs=https://github.com/nixos/nixpkgs/archive/fbfb79400a08bf754e32b4d4fc3f7d8f8055cf94.tar.gz -p yarn --run "yarn install && yarn run release && yarn pack"
+  tags:
+  - nix
+  artifacts:
+    paths:
+      - openapi-typescript-codegen-v0.9.3.tgz
