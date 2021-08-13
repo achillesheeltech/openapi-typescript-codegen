@@ -7,7 +7,7 @@
 }: {
 {{#each parameters}}
 {{#if description}}
-/** {{{description}}} **/
+/** {{{getComment description}}} **/
 {{/if}}
 {{{name}}}{{>isRequired}}: {{>type}},
 {{/each}}

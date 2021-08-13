@@ -4,6 +4,7 @@ import { Enum } from '../client/interfaces/Enum';
 import { Model } from '../client/interfaces/Model';
 import { HttpClient } from '../HttpClient';
 import { unique } from './unique';
+import { getComment } from '../openApi/v3/parser/getComment';
 
 export function registerHandlebarHelpers(root: { httpClient: HttpClient; useOptions: boolean; useUnionTypes: boolean }): void {
     Handlebars.registerHelper('equals', function (this: any, a: string, b: string, options: Handlebars.HelperOptions): string {
@@ -54,5 +55,9 @@ export function registerHandlebarHelpers(root: { httpClient: HttpClient; useOpti
 
     Handlebars.registerHelper('json', function (this: any, obj: any) {
         return JSON.stringify(obj)
+    })
+
+    Handlebars.registerHelper('getComment', function (this: any, obj: any) {
+        return getComment(obj)
     })
 }
